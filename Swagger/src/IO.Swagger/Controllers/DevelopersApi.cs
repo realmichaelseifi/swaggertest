@@ -40,11 +40,11 @@ namespace IO.Swagger.Controllers
         [Route("/MSEIFI_1/testintegrationapi/1.0.0/inventoryget")]
         [ValidateModelState]
         [SwaggerOperation("SearchInventory")]
-        [SwaggerResponse(statusCode: 200, type: typeof(List<Testingget>), description: "search results matching criteria")]
+        [SwaggerResponse(statusCode: 200, type: typeof(List<>), description: "search results matching criteria")]
         public virtual IActionResult SearchInventory([FromQuery]string searchString, [FromQuery]int? skip, [FromQuery][Range(0, 50)]int? limit)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200, default(List<Testingget>));
+            // return StatusCode(200, default(List<>));
 
             //TODO: Uncomment the next line to return response 400 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(400);
@@ -52,8 +52,8 @@ namespace IO.Swagger.Controllers
             exampleJson = "[ \"{}\", \"{}\" ]";
             
                         var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<List<Testingget>>(exampleJson)
-                        : default(List<Testingget>);            //TODO: Change the data returned
+                        ? JsonConvert.DeserializeObject<List<>>(exampleJson)
+                        : default(List<>);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
     }
