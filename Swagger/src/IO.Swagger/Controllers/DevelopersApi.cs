@@ -37,23 +37,23 @@ namespace IO.Swagger.Controllers
         /// <response code="200">search results matching criteria</response>
         /// <response code="400">bad input parameter</response>
         [HttpGet]
-        [Route("/MSEIFI_1/testintegrationapi/1.0.0/inventory")]
+        [Route("/MSEIFI_1/testintegrationapi/1.0.0/inventoryget")]
         [ValidateModelState]
         [SwaggerOperation("SearchInventory")]
-        [SwaggerResponse(statusCode: 200, type: typeof(List<InventoryItem>), description: "search results matching criteria")]
+        [SwaggerResponse(statusCode: 200, type: typeof(List<Testingget>), description: "search results matching criteria")]
         public virtual IActionResult SearchInventory([FromQuery]string searchString, [FromQuery]int? skip, [FromQuery][Range(0, 50)]int? limit)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200, default(List<InventoryItem>));
+            // return StatusCode(200, default(List<Testingget>));
 
             //TODO: Uncomment the next line to return response 400 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(400);
             string exampleJson = null;
-            exampleJson = "[ {\n  \"releaseDate\" : \"2016-08-29T09:12:33.001Z\",\n  \"name\" : \"Widget Adapter\",\n  \"id\" : \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"manufacturer\" : {\n    \"phone\" : \"408-867-5309\",\n    \"name\" : \"ACME Corporation\",\n    \"homePage\" : \"https://www.acme-corp.com\"\n  }\n}, {\n  \"releaseDate\" : \"2016-08-29T09:12:33.001Z\",\n  \"name\" : \"Widget Adapter\",\n  \"id\" : \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"manufacturer\" : {\n    \"phone\" : \"408-867-5309\",\n    \"name\" : \"ACME Corporation\",\n    \"homePage\" : \"https://www.acme-corp.com\"\n  }\n} ]";
+            exampleJson = "[ \"{}\", \"{}\" ]";
             
                         var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<List<InventoryItem>>(exampleJson)
-                        : default(List<InventoryItem>);            //TODO: Change the data returned
+                        ? JsonConvert.DeserializeObject<List<Testingget>>(exampleJson)
+                        : default(List<Testingget>);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
     }

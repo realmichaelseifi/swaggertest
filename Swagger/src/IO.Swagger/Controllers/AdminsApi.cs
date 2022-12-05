@@ -36,7 +36,7 @@ namespace IO.Swagger.Controllers
         /// <response code="400">invalid input, object invalid</response>
         /// <response code="409">an existing item already exists</response>
         [HttpPost]
-        [Route("/MSEIFI_1/testintegrationapi/1.0.0/inventory")]
+        [Route("/MSEIFI_1/testintegrationapi/1.0.0/inventoryget")]
         [ValidateModelState]
         [SwaggerOperation("AddInventory")]
         public virtual IActionResult AddInventory([FromBody]InventoryItem body)
